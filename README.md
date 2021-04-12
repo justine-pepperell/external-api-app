@@ -33,8 +33,8 @@ Time to get building!
 1. Replace your `console.log` with using `superagent` to make a `GET` request to `https://dog.ceo/api/breeds/image/random`, just like we were doing with Insomnia.
     - Superagent uses a promise-based interface, so you will need to chain a `.then()` block after this.
     - Inside your `.then()` block, `console.log` the result of your request.
-    - Refresh the app in your browser again. In the browser console, you should be seeing a big object, with all sort of information about the HTTP response. The `body` property should contain data with the same shape as we saw in Insomnia earlier.
-    - Instead of logging the entire response, make some changes to yout `.then()` block so you're only logging the image url string from the `message`.
+    - Refresh the app in your browser again. In the browser console, you should be seeing a big object, with all sorts of information about the HTTP response. The `body` property should contain data with the same shape as we saw in Insomnia earlier.
+    - Instead of logging the entire response, make some changes to your `.then()` block so you're only logging the image url string from the `message`.
 
 1. Remove the `console.log` and instead use the `setDogImageUrl` function (from your `useState`) to update the state with the image url from the API.
     - Use the React Dev Tools to check that the state updates as you expect.

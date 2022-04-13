@@ -1,22 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import { getWelcome } from '../api'
+
+import { getJokes } from '../api.js'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
+ 
+const [chuckJoke, setChuckJoke] = useState(null)
 
-  useEffect(() => {
-    getWelcome()
-      .then((res) => {
-        setWelcomeStatement(res.statement)
-        return null
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
+const getRandomJoke = () => {
+  getJokes()
+  .then (str => {
+    setChuckJoke(str)
   })
+  .catch((err) => {
+    console.log(err.message)
+  })
+}
 
-  return <h1>{welcomeStatement}</h1>
+
+  return (
+    <>
+  
+  <h1>Chuck Norris Jokes</h1>
+  <button onClick ={getRandomJoke}>Random Jokes </button>
+  {chuckJoke && <h2>{chuckJoke}</h2>}
+
+
+
+  </>
+
+  )
 }
 
 export default App

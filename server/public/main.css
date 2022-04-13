@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h3 {
+    display: flex;
+    margin: 0 auto;
+  background: linear-gradient(to top, beige 50%, transparent 50%);
+}
+
+.quote {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    max-width: 60vw;
+    margin-top: 20px;
+}
+
+.background {
+    display:flex;
+    justify-content: center;
+}
+
+.background img {
+    max-width: 80vw;
+    max-height: 50vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.button {
+display:flex;
+margin-top: 50px;
+justify-content: center;
+}
+
+button {
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 21px;
+    background-color:beige;
+    border-top: 5px solid beige;
+    border-left: 5px solid beige;
+    border-right: 5px solid grey;
+    border-bottom:5px solid grey;
+    
+}

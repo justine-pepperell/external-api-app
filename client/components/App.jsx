@@ -16,13 +16,13 @@ function App() {
   }
 
   const findFinancePrice = () => {
-    getFinancePrice('GOOGL').then(str => { //todo random stock
+    getFinancePrice('GOOGL').then(str => { //todo make a random stock or be able to choose
       console.log(str);
       setFinancePrice(str)
     })
   }
   const findFinanceProfile = () => {
-    getFinanceProfile('GOOGL').then(str => { //todo random stock
+    getFinanceProfile('GOOGL').then(str => { //todo make it a random stock or be able to choose
       console.log(str);
       setFinanceProfile(str);
       

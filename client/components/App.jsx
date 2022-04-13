@@ -33,7 +33,7 @@ function App() {
       }}>
         <input type="text" name="word" value={word} onChange={(e) => {
           //console.log(e.target.value)
-          setWord(e.target.value);
+          setWord(e.target.value); //this updates the state value for 'word' declared in useState(''), also re-renders
         }} placeholder="Enter a word." />
         <input type="submit" value="Submit" />
       </form>

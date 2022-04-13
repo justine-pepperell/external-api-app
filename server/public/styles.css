@@ -35,7 +35,7 @@ button {
 
 
 .cat-fact-box {
-  margin-top: 100px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -46,6 +46,10 @@ button {
   box-sizing: border-box;
 }
 
+.cat-fact-box li {
+  list-style-type: none;
+}
+
 .cat-fact-box h3 {
   line-height: 1.5;
 }
@@ -54,3 +58,4 @@ img {
   width: 480px;
   height: auto;
 }
+

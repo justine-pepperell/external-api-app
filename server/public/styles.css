@@ -13,7 +13,9 @@ button {
 }
 
 .cat-fact-box {
-  margin: 100px auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   width: 480px;
   height: 240px;

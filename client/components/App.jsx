@@ -8,7 +8,7 @@ function App() {
 
   const findCatFact = () => {
     getCatFact().then(str => {
-      setCatFact(str.fact);
+      setCatFact(str);
     })
   }
 
@@ -21,8 +21,9 @@ function App() {
     </div>
     <button onClick={findCatFact}>Get a cat fact</button>
     <div className="cat-fact-box">
-      <h3>{catFact}</h3>
+      {catFact &&<h3>{catFact.fact}</h3>}
     </div>
+    {catFact &&<p>Quote length: {catFact.length}</p>}
     <img src="https://www.thepetlogic.com/wp-content/uploads/2021/05/Silly-Cat-Names.jpg"></img>
   </div>
   )

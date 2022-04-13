@@ -1,17 +1,17 @@
 import request from 'superagent'
 
-const nbaUrl = 'https://www.balldontlie.io/api/v1/players/'
+const nbaUrl = 'https://www.balldontlie.io/api/v1/'
 
-// export function getNbaStat() {
-//   return request.get(nbaUrl + 'players?search=nikola').then((resp) => {
-//     console.log(resp.body.data)
-//     return resp.body.data
-//   })
-// }
-
-export function searchNbaStat(search) {
-  return request.get(nbaUrl + '?search=' + search).then((resp) => {
-    console.log(resp.body.data)
+export function searchNbaName(search) {
+  return request.get(nbaUrl + 'players/?search=' + search).then((resp) => {
     return resp.body.data
   })
+}
+
+export function searchNbaStats(id) {
+  return request
+    .get(nbaUrl + 'season_averages?player_ids[]=' + id)
+    .then((resp) => {
+      return resp.body.data
+    })
 }

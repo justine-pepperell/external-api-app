@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
 import { getWelcome } from '../api'
+import RandRecipe from './Recipe.jsx'
 
 function App() {
   const [welcomeStatement, setWelcomeStatement] = useState('')
@@ -16,7 +16,15 @@ function App() {
       })
   })
 
-  return <h1>{welcomeStatement}</h1>
+
+
+  return (
+    <>
+    <h1>{welcomeStatement}</h1>
+    <RandRecipe />
+    </>
+  )
+
 }
 
 export default App

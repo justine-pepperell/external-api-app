@@ -1,9 +1,12 @@
 import request from 'superagent'
 
-const serverURL = 'http://localhost:3000/api/v1'
+const proverbApiUrl = 'https://eda-te-reo.herokuapp.com/api/proverbs'
 
-// *** EXAMPLE ***
-export function getWelcome() {
-  return request.get(`${serverURL}/welcome`).then((response) => response.body)
+export function getMaoriProverb () {
+  return request
+    .get(proverbApiUrl)
+    .then(resp => {
+      console.log(resp.body)
+      return resp.body
+    })
 }
-// ***   ***   ***

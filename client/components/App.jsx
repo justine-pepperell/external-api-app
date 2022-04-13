@@ -1,44 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import { getSpacePicture } from '../api/nasa'
+import { getMaoriProverb } from '../api'
 
-import { getWelcome } from '../api'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
-  const [spaceObj, setSpaceObj] = useState(null)
+  const [maoriProverb, setMaoriProverb] = useState(null)
 
-  const findSpace = () => {
-    getSpacePicture()
+  const findProverb = () => {
+    // eslint-disable-next-line promise/catch-or-return
+    getMaoriProverb()
       .then(obj => {
-        setSpaceObj(obj)
+        setMaoriProverb(obj)
       })
-  }
-
-
-
-
-
-
-  // useEffect(() => {
-  //   getWelcome()
-  //     .then((res) => {
-  //       setWelcomeStatement(res.statement)
-  //       return null
-  //     })
-  //     .catch((err) => {
-  //       console.error(err.message)
-  //     })
-  // })
+    }
 
   return (
     <>
-      <h1>NASA space is crazy aye!</h1>
-      <button onClick={findSpace}>Get space pic</button>
-      {/* {spaceObj && <img src={spaceObj.url} />} */}
-      <img src={spaceObj?.url} />
+      <h1>Proverb Test</h1>
+      <button onClick={findProverb}>Get Proverb</button>
+      <p>{maoriProverb?.source}</p>
+      <p>{maoriProverb?.translation}</p>
+
     </>
   )
 }
+
 
 export default App

@@ -1,22 +1,45 @@
+/* eslint-disable promise/catch-or-return */
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome } from '../api'
+import { searchNbaStat } from '../api/nba'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
-
-  useEffect(() => {
-    getWelcome()
-      .then((res) => {
-        setWelcomeStatement(res.statement)
-        return null
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
+  const [nbaStat, setNbaStat] = useState('')
+  const [formData, setFormData] = useState({
+    name: ''
   })
 
-  return <h1>{welcomeStatement}</h1>
+  const displayNbaStat = (e) => {
+    e.preventDefault()
+    searchNbaStat(formData.name).then(obj => {
+      setNbaStat(obj.map(player => <li key={player.id}>{player.first_name} {player.last_name} - {player.team.city} {player.team.name}</li>))
+      })
+    }
+  
+    const changeHandler = (e) => {
+      const key = e.target.name
+        const value = e.target.value
+
+        const newState = {
+            ...formData,
+            [key]: value
+        }
+        setFormData(newState)
+    }
+
+  return (
+    <>
+      <form onSubmit={displayNbaStat}>
+        <label htmlFor='name'>Name: </label>
+        <input id='name' name='name' value={formData.name} onChange={changeHandler} type='text'/>
+        <button>Search</button>
+      </form>
+
+      <ul>
+        {nbaStat}
+      </ul>
+    </>
+  )
 }
 
 export default App

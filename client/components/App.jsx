@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState } from 'react'
 
 //import { getWelcome } from '../api'
 
@@ -7,21 +7,9 @@ import { getPhonetics } from '../api'
 
 function App() {
   //const [welcomeStatement, setWelcomeStatement] = useState('')
-  const [PhoneticSpelling, setPhoneticsSpelling] = useState('')
+  const [word, setWord] = useState('');
+  const [phoneticSpelling, setPhoneticsSpelling] = useState('')
 
-  useEffect(() => {
-    getPhonetics()
-      .then((res) => {
-        console.log(res)
-        setPhoneticsSpelling(res)
-        return null
-      })
-      .catch((err) => {
-        console.log(err.message)
-      })
-  })
-
-  
   // // const findPhonetics = () => {
   //   getPhonetics()
   //   .then(str => {
@@ -32,13 +20,25 @@ function App() {
   //   }) 
   
 
-  return (
-  <>
+  return <main>
+    <h2>{phoneticSpelling}</h2>
+      <form onSubmit={(e) => {
+        getPhonetics(word).then((res) => {
+          setPhoneticsSpelling(res);
+        })
+        .catch((err) => {
+          console.log(err.message)
+        })
+        e.preventDefault();
+      }}>
+        <input type="text" name="word" value={word} onChange={(e) => {
+          //console.log(e.target.value)
+          setWord(e.target.value);
+        }} placeholder="Enter a word." />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
 
-  <h2>{PhoneticSpelling}</h2>
-  
-  </>
-  )
 }
 
 

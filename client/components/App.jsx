@@ -4,9 +4,12 @@ import { getWelcome } from '../api'
 
 import { getAllMemes } from '../api/memes'
 
+import { searchEventsWellington } from '../api/ticketmaster'
+
 function App() {
   const [welcomeStatement, setWelcomeStatement] = useState('')
   const [randomMeme, setRandomMeme] = useState('')
+  const [wellyEvents, setWellyEvents] = useState(null)
 
   useEffect(() => {
     getWelcome()
@@ -19,6 +22,9 @@ function App() {
       })
   })
 
+  // useEffect(() => {
+
+  // })
   const generateRandomMeme = () => {
     getAllMemes()
       .then(memeArr => {
@@ -33,13 +39,44 @@ function App() {
   
   }
 
+  const generateWellyEvents = () => {
+    searchEventsWellington()
+      .then((eventsArr) => {
+        setWellyEvents(eventsArr)
+
+        // console.log(wellyEvents)
+        // console.log(eventsArr)
+      })
+      .catch((err) => {
+        console.error(err.message)
+      })
+  
+  }
+
+
+
   return (
   <> 
   <h1>{welcomeStatement}</h1>
     <h2>Would you like to see a random meme?</h2>
-      <button onClick={generateRandomMeme}>Spin up a meme!</button><br></br>
+      <button onClick={generateRandomMeme}>Spin up a meme!</button><br></br><br></br>
       
       <img src={randomMeme}></img>
+
+    <h2>Lets see whats on in Welly!</h2>
+      <button onClick={generateWellyEvents}>Whats on in Welly?</button><br></br><br></br>
+      <div className="eventInfo">
+        {/* {wellyEvents && <h1>{wellyEvents[0].name}</h1>} */}
+        {wellyEvents && <ul>
+          {wellyEvents.map((event, i) => (
+          <li key={i}><h3>{event.name}</h3>
+          <img src={event.imgUrl}></img></li>)
+          )}
+        </ul>}
+
+      </div>
+
+       
   </>
   )
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 import { getWelcome } from '../api'
-import { getRandomDog } from '../api/dog'
+// import { getRandomDog } from '../api/dog'
 import { getCharacter } from '../api/character'
 
 function App() {
   const [welcomeStatement, setWelcomeStatement] = useState('')
-  const [dogImg, setDogImg] = useState(null)
+  // const [dogImg, setDogImg] = useState(null)
   const [characterImg, setCharacterImg] = useState(null)
 
   useEffect(() => {
@@ -20,13 +20,13 @@ function App() {
       })
   })
 
-  const findDog = () => {
-    getRandomDog()
-      .then(str => {
-        setDogImg(str)
-      })
-      .catch
-  }
+  // const findDog = () => {
+  //   getRandomDog()
+  //     .then(str => {
+  //       setDogImg(str)
+  //     })
+  //     .catch
+  // }
 
   const findCharacter = () => {
     getCharacter()
@@ -39,8 +39,8 @@ function App() {
   return (
   <>
     <h1>{welcomeStatement}</h1>
-    <button onClick={findDog}>Get doggo</button>
-    <img src={dogImg} />
+    {/* <button onClick={findDog}>Get doggo</button>
+    <img src={dogImg} /> */}
     <button onClick={findCharacter}>Bobs burger characters</button>
     <img src={characterImg?.image} />
     <h4><a href={characterImg?.wikiUrl}>{characterImg?.name}</a></h4>

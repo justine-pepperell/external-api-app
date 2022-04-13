@@ -43,7 +43,7 @@ function App() {
     <h2>Original Title: {getAFilm?.original_title}</h2>
     <h2>Description: {getAFilm?.description}</h2>
     <h2>Director: {getAFilm?.director}</h2>
-    <h2>Release Date: {getAFilm.release_date}</h2>
+    <h2>Release Date: {getAFilm?.release_date}</h2>
     <h2>Running Time: {getAFilm?.running_time}</h2>
     <h2>Rating: {getAFilm?.rt_score}</h2>
 
@@ -56,7 +56,7 @@ function App() {
     <h2>Classification: {ghibliSpec?.classification}</h2>
     <h2>Eye Colour: {ghibliSpec?.eye_colors}</h2>
     <h2>Hair Colour: {ghibliSpec?.hair_colors}</h2>
-    <h2>URL: {ghibliSpec.url}</h2>
+    <h2>URL: {ghibliSpec?.url}</h2>
     <h2>People: {ghibliSpec?.people}</h2>
     <h2>Films: {ghibliSpec?.films}</h2>
 

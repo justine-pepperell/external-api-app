@@ -1,22 +1,46 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome } from '../api'
+//import { getWelcome } from '../api'
+
+import { getPhonetics } from '../api'
+
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
+  //const [welcomeStatement, setWelcomeStatement] = useState('')
+  const [PhoneticSpelling, setPhoneticsSpelling] = useState('')
 
   useEffect(() => {
-    getWelcome()
+    getPhonetics()
       .then((res) => {
-        setWelcomeStatement(res.statement)
+        console.log(res)
+        setPhoneticsSpelling(res)
         return null
       })
       .catch((err) => {
-        console.error(err.message)
+        console.log(err.message)
       })
   })
 
-  return <h1>{welcomeStatement}</h1>
+  
+  // // const findPhonetics = () => {
+  //   getPhonetics()
+  //   .then(str => {
+  //    setPhoneticsSpelling(str)
+  //   })
+  //   .catch((err) => {
+  //    console.error(err.message) 
+  //   }) 
+  
+
+  return (
+  <>
+
+  <h2>{PhoneticSpelling}</h2>
+  
+  </>
+  )
 }
+
+
 
 export default App

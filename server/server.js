@@ -16,4 +16,7 @@ server.get('/api/catFact', (req, res) => {
   })
 })
 
+//Signed up for finnhub.io API key
+//c9b1ni2ad3idfn1smat0 - https://finnhub.io/dashboard
+
 module.exports = server

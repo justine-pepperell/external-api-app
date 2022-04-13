@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome } from '../api'
+import { getPic } from '../api'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
+  const [pic, setPic] = useState('')
 
   useEffect(() => {
-    getWelcome()
+    getPic()
       .then((res) => {
-        setWelcomeStatement(res.statement)
+        setPic(res)
         return null
       })
       .catch((err) => {
@@ -16,7 +16,13 @@ function App() {
       })
   })
 
-  return <h1>{welcomeStatement}</h1>
+  return (
+    <>
+      <h1>API stuff</h1>
+      <img src={pic}/>
+    </>
+
+  )
 }
 
 export default App

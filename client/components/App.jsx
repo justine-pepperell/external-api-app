@@ -23,6 +23,7 @@ function App() {
     <div className="cat-fact-box">
       <h3>{catFact}</h3>
     </div>
+    <img src="https://www.thepetlogic.com/wp-content/uploads/2021/05/Silly-Cat-Names.jpg"></img>
   </div>
   )
 }

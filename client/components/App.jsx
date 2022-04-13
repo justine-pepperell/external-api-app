@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome } from '../api'
+import { getCatFact } from '../api'
 
 function App() {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
 
-  useEffect(() => {
-    getWelcome()
-      .then((res) => {
-        setWelcomeStatement(res.statement)
-        return null
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
-  })
+  const [catFact, setCatFact] = useState(null)
 
-  return <h1>{welcomeStatement}</h1>
+  const findCatFact = () => {
+    getCatFact().then(str => {
+      setCatFact(str.fact);
+    })
+  }
+
+  return (
+  <div>
+    <h1>Welcome to random cat facts!</h1>
+    <h2>Did you subscribe to random cat facts? No? heres some anyway.</h2>
+    <div className="cat-facts-container">
+
+    </div>
+    <button onClick={findCatFact}>Get a cat fact</button>
+    <div className="cat-fact-box">
+      <h3>{catFact}</h3>
+    </div>
+  </div>
+  )
 }
 
 export default App

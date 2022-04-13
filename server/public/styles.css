@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+button {
+  padding: 24px;
+  background-color: rgb(100, 197, 253);
+  border-radius: 18px;
+}
+
+.cat-fact-box {
+  margin: 200px;
+  display: flex;
+  width: 480px;
+  height: 300px;
+  padding: 24px;
+}
+
+.cat-fact-box h3 {
+  line-height: 1.5;
+}

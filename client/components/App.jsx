@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
 import { getWelcome } from '../api'
+import { getRandomDog } from '../api/dog'
 
 function App() {
   const [welcomeStatement, setWelcomeStatement] = useState('')
+  const [dogImg, setDogImg] = useState(null)
 
   useEffect(() => {
     getWelcome()
@@ -16,7 +18,21 @@ function App() {
       })
   })
 
-  return <h1>{welcomeStatement}</h1>
+  const findDog = () => {
+    getRandomDog()
+      .then(str => {
+        setDogImg(str)
+      })
+      .catch
+  }
+
+  return (
+  <>
+    <h1>{welcomeStatement}</h1>
+    <button onClick={findDog}>Get doggo</button>
+    <img src={dogImg} />
+  </>
+  )
 }
 
 export default App

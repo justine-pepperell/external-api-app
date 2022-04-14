@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import { getCatFact } from '../api'
 import {getFinancePrice, getFinanceProfile} from '../api'
+import Button from '@mui/material/Button';
+
 
 function App() {
 
@@ -50,8 +52,8 @@ function App() {
       <h2>Did you subscribe to random cat facts? No? heres some anyway.</h2>
       <div className="cat-facts-container">
       </div>
-      <button onClick={findCatFact}>Get a cat fact</button>
-      <button onClick={getAllFinance}>Get a stock</button>
+      <Button sx={{margin: '10px'}}variant="contained" onClick={findCatFact}>Get a cat fact</Button>
+      <Button variant="contained" onClick={getAllFinance}>Get a stock</Button>
       <div className="cat-fact-box">
         {catFact &&<h3>{catFact.fact}</h3>}
       </div>

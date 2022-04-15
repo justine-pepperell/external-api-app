@@ -25,3 +25,4 @@ Find your own, check out this [comprehensive list of options](https://github.com
 ## Things to remember
 * Create the functions that make your API calls in `client/api.js`, and call those functions within your React components.
 * If you choose an API that enforces CORS, you'll need to consume the API from the server-side. This is great practice, but you may wish to choose one that doesn't enforce CORS to start with.
+

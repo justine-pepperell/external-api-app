@@ -1,7 +1,5 @@
 import request from 'superagent' ///library for making api requests - only need the url and params
 
-//const serverURL = 'http://localhost:3000/api/v1' //example
-
 //external API
 const freeOpenDictionaryURL = 'https://api.dictionaryapi.dev/api/v2/entries/en'
 

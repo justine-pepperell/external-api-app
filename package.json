@@ -18,6 +18,11 @@
     "test": "jest --watchAll",
     "lint": "eslint --ext .js,.jsx ."
   },
+
+  "engines": {
+    "node": "16.x"
+  },
+
   "babel": {
     "presets": [
       "@babel/preset-env",

@@ -1,15 +1,42 @@
 header {
   font-size: 2cm;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  rgb(16, 8, 3);
 }
 
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: antiquewhite;
+  font:  rgb(16, 8, 3);
+}
+
+.introPara {
+  text-align: left;
 }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1cm;
+  margin-bottom: 3cm;
   width: 50%;
+  border-color: black;
+  border-style: inset;
+  float: left;
+
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 1cm;
+  padding: 20px;
+  background-color: rgb(16, 8, 3);
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: left;
 }

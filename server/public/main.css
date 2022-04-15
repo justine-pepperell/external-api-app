@@ -1,0 +1,15 @@
+header {
+  font-size: 2cm;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

@@ -10,18 +10,10 @@ function App() {
   const [word, setWord] = useState('');
   const [phoneticSpelling, setPhoneticsSpelling] = useState('')
 
-  // // const findPhonetics = () => {
-  //   getPhonetics()
-  //   .then(str => {
-  //    setPhoneticsSpelling(str)
-  //   })
-  //   .catch((err) => {
-  //    console.error(err.message) 
-  //   }) 
-  
 
   return <main>
     <h2>{phoneticSpelling}</h2>
+     
       <form onSubmit={(e) => {
         getPhonetics(word).then((res) => {
           setPhoneticsSpelling(res);
@@ -40,7 +32,5 @@ function App() {
     </main>
 
 }
-
-
 
 export default App

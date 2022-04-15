@@ -2,6 +2,15 @@ header {
   font-size: 2cm;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  rgb(16, 8, 3);
+  background-color: ivory;
+  width: 100%;
+  position: sticky;
+  padding: 20px
+}
+
+.imgheading {
+ margin-bottom: 10px;
+
 }
 
 body {
@@ -18,13 +27,12 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1cm;
-  margin-bottom: 3cm;
+  margin-top: 0;
+  margin-bottom: 10px;
   width: 50%;
   border-color: black;
   border-style: inset;
   float: left;
-
 }
 
 
@@ -39,4 +47,9 @@ img {
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: left;
+}
+
+.nzpacontainer {
+width: 50%;
+margin-bottom: 2cm;
 }

@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const picsumURL = 'https://api.imgflip.com/get_memes'
+const memeURL = 'https://api.imgflip.com/get_memes'
 
 // *** EXAMPLE ***
 // export function getWelcome() {
@@ -8,9 +8,9 @@ const picsumURL = 'https://api.imgflip.com/get_memes'
 // }
 // ***   ***   ***
 
-export function getPic() {
-  return request.get(`${picsumURL}`).then((response) => {
-    console.log(response.body.data.memes[0].url)
-    return response.body.data.memes[6].url
+export function getMeme() {
+  return request.get(`${memeURL}`).then((response) => {
+    console.log(response.body.data.memes[12].url)
+    return response.body.data.memes[12].url
   })
 }

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { getPic } from '../api'
+import { getMeme } from '../api'
 
 function App() {
-  const [pic, setPic] = useState('')
+  const [meme, setMeme] = useState('')
 
   useEffect(() => {
-    getPic()
+    getMeme()
       .then((res) => {
-        setPic(res)
+        setMeme(res)
         return null
       })
       .catch((err) => {
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <h1>API stuff</h1>
-      <img src={pic}/>
+      <img src={meme}/>
     </>
 
   )

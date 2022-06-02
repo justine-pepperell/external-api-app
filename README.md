@@ -10,7 +10,7 @@ Visit https://phonetic-spelling-justine.herokuapp.com/
 
 # Why I made this app
 While studying at EDA, we learnt about incorporating external APIs into web applications. 
-I thought it would be fun to make a simple web app using html, css, javaScript and React that call the Free Online Dictionary API. 
+I thought it would be fun to make a simple web app using html, css, javaScript and React that calls the Free Online Dictionary API. 
 
 # User Story 
 A user can enter the English spelling of a word into the text box and received back the spelling in IPA

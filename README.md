@@ -1,9 +1,9 @@
-External-api-app
+#External-api-app
 
-Technologies:
+#Technologies:
 Html & CSS
 javaScript & React
 calls the Free Online Dictionary API
 
-How to view the app online 
+#How to view the app 
 Visit https://phonetic-spelling-justine.herokuapp.com/

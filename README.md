@@ -15,5 +15,6 @@ I thought it would be fun to make a simple web app using html, css, javaScript a
 # User Story 
 A user can enter the English spelling of a word into the text box and received back the spelling in IPA.
 
-Through refering the IPA pronunication chart, the user can figure out how to pronounce a tricky word like choir. 
+Through refering the NZPA pronunication chart, the user can figure out how to pronounce a tricky word like choir. 
 
+The user will also see the vowel shift in New Zealand English if the have prior knowledge of IPA. 

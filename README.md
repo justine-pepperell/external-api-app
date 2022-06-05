@@ -2,7 +2,10 @@
 
 # Technologies:
 Html & CSS
+
 javaScript & React
+Node.js 
+
 calls the Free Online Dictionary API
 
 # How to view the app 

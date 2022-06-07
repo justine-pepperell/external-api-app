@@ -21,3 +21,8 @@ A user can enter the English spelling of a word into the text box and received b
 Through refering the NZPA pronunication chart, the user can figure out how to pronounce a tricky word like choir. 
 
 The user will also see the vowel shift in New Zealand English if the have prior knowledge of IPA. 
+
+# Known bugs
+
+The format of the json object returned by the API is inconsistent and outlying format cases are still being identified. 
+For example, if you search the word /look/ it does not return the phonetic spelling of the word. 
